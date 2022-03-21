@@ -9,6 +9,7 @@ const scores = {
     koalaScore3 : [109, 95, 106],
 }
 
+// const sum = array.reduce((a, b) => a + b, 0);
 //console.log(Object.keys(scores));
 function calcAvg(numbers) {
     const sum = numbers.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
@@ -44,4 +45,3 @@ function compareAvg(dolphins, koalas) {
 compareAvg(avgObj.dolphinScore1, avgObj.koalaScore1);
 compareAvg(avgObj.dolphinScore2, avgObj.koalaScore2);
 compareAvg(avgObj.dolphinScore3, avgObj.koalaScore3);
-
