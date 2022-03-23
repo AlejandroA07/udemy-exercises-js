@@ -1,5 +1,5 @@
 
-const bills = [275, 40, 430];
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 
 
 function calcTip(bill) {
@@ -16,8 +16,14 @@ bills.forEach(bill => {
     totals.push(bill + tip);
 });
 
-console.log(tips);
-console.log(totals);
+console.log(tips, totals);
+
+function calcAvg(numbers) {
+    const sum = numbers.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+    return sum / numbers.length;
+}
+
+console.log(calcAvg(totals));
 
 /* function check(bill) {
     const tip = bill < 50 && bill > 300 ? 15 / 100 * bill : 20 / 100 * bill;
