@@ -1,7 +1,8 @@
+
+/* 
 function calcBMI(weight, height) {
-  const BMI = weight / (height * height);
+  return weight / (height * height);
   // const BMI = weight / height ** 2
-  return BMI;
 }
 
 const markBMI = calcBMI(78, 1.69);
@@ -23,4 +24,28 @@ function compareBMI(mark, jhon) {
   }
 }
 
-compareBMI(markBMI, jhonBMI);
+compareBMI(markBMI, jhonBMI); */
+
+const john = {
+  fullName : "John Smith",
+  mass : 92,
+  height : 1.95,
+  calcBMI : function calcBMI() {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  }
+}
+john.calcBMI();
+
+const mark = {
+  fullName : "Mark Miller",
+  mass : 78,
+  height : 1.69,
+  calcBMI : function calcBMI() {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  }
+}
+mark.calcBMI();
+
+console.log(john.bmi > mark.bmi ? `${mark.fullName}'s BMI(${mark.bmi}) is lower than ${john.fullName}'s BMI(${john.bmi})` : `${mark.fullName}'s BMI(${mark.bmi}) is higher than ${john.fullName}'s BMI(${john.bmi})`);
