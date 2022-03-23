@@ -8,7 +8,7 @@ const bills = [275, 40, 430];
 }
  */
 function calcTip(bill) {
-    return bill < 50 && bill > 300 ? 15 / 100 * bill : 20 / 100 * bill;
+    return bill > 50 && bill < 300 ? 15 / 100 * bill : 20 / 100 * bill;
 }
 
 const totals = [];
@@ -39,6 +39,12 @@ console.log(calcTipAndTotal(bills));
  */
 
 bills.forEach(bill => {
+
+    const tip = bill > 50 && bill < 300 ? 15 / 100 * bill : 20 / 100 * bill;
+const total = tip + bill;
+console.log(`The bill was ${bill}, the tip was ${tip} and the total money spend was ${total}.`)
+});
+
     const tip = calcTip(bill);
     tips.push(tip);
     totals.push(bill + tip);
