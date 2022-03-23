@@ -11,6 +11,9 @@ const scores = {
 
 // const sum = array.reduce((a, b) => a + b, 0);
 //console.log(Object.keys(scores));
+
+//const calcAvgArrowF =  (a, b, c) => (a + b + c) / 3;
+
 function calcAvg(numbers) {
     const sum = numbers.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
     return sum / numbers.length;
