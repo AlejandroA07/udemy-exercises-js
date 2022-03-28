@@ -1,21 +1,16 @@
 const temp = [17, 21, 23, 12, 26, 18, 19, 25, 16, 28, 15, 21, 13, 29, 30, 17, 21, 23, 12, 26, 18, 19, 25, 16, 28, 15, 21, 13, 29, 30];
 const arr = [17, 21, 23];
 
-function logOutString(arr) {
-  
-  let b = "";
-  
-  for (let i = 0; i < arr.length; i++) {
-    
-    const temp = arr[i];
-    const index = i + 1;
-    const a = `${temp}C the ${ordinal(index)} day ` ;
-    
+let b = "";
+
+temp.forEach(el => {
+//    const index = temp.indexOf(el) + 1;
+    const a = `${el}C the ${ordinal(temp.indexOf(el) + 1)} day ` ;
     b += a;
-  }
-  return b;
-  
-}
+})
+    
+
+
 
 function ordinal(index) {
   const ind = index.toString();
@@ -33,4 +28,21 @@ const indIndex = ind.charAt(ind.length - 1);
 }
 
 
-console.log(logOutString(temp));
+console.log(b);
+
+
+/* function logOutString(arr) {
+  
+  let b = "";
+  
+  for (let i = 0; i < arr.length; i++) {
+    
+    const temp = arr[i];
+    const index = i + 1;
+    const a = `${temp}C the ${ordinal(index)} day ` ;
+    
+    b += a;
+  }
+  return b;
+  
+} */
