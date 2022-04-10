@@ -24,7 +24,6 @@ function rollDice() {
         document.getElementById(`current--${activePlayer}`).textContent = 0;
         //activePlayer = activePlayer === 0 ? 1 : 0;
         switchPlayer()
-        addStyleToActivePlayer()
         currentScore = 0;
     }
 }
@@ -39,20 +38,26 @@ const players = [0, 1];
 
 function switchPlayer() {
     activePlayer = (activePlayer + 1) % players.length;
+    player1.classList.toggle('player--active');
+    player2.classList.toggle('player--active');
     return activePlayer;
 };
 
-function addStyleToActivePlayer() {
-    player1.classList.toggle('player--active');
-    player2.classList.toggle('player--active');
-}
 
 function holdenScore() {
-    
-    document.getElementById(`score--${activePlayer}`).textContent = Number(document.getElementById(`score--${activePlayer}`).textContent) + currentScore;
+
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
+    if (scores[activePlayer] >= 100) {
+        document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+    } else {
     document.getElementById(`current--${activePlayer}`).textContent = 0;
     currentScore = 0;
+    
+
     switchPlayer();
+    }
 }
 
 
+console.log(scores);
