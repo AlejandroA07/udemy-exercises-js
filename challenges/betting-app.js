@@ -44,10 +44,32 @@ const game = {
 };
    
 
-const players1 = [game.players[0]];
-const players2 = [game.players[1]];
-
-let obj = {};
+const [players1, players2] = game.players;
 
 
-console.log(players1, players2)
+const [gk, ...fieldPlayers] = players1;
+
+const allPlayers = players1.concat(players2);
+
+const playersFinal = [...players1, 'Thiago', 'Cautinho', 'Perisic'];
+
+
+const {team1, x: draw, team2} =  game.odds;
+
+function printGoals(...players) {
+    console.log(`${players.length} goals were scored`);
+}
+
+team1 < team2 && console.log('team1 is more likely to win');
+team1 > team2 && console.log('team2 is more likely to win');
+//printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich')
+printGoals(...game.scored)
+console.log(players1, players2);
+console.log(gk, fieldPlayers);
+console.log(allPlayers);
+console.log(playersFinal);
+console.log(team1, draw, team2);
+
+/* console.log()
+console.log()
+ */
