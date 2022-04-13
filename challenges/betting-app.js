@@ -60,16 +60,28 @@ function printGoals(...players) {
     console.log(`${players.length} goals were scored`);
 }
 
-team1 < team2 && console.log('team1 is more likely to win');
+/* team1 < team2 && console.log('team1 is more likely to win');
 team1 > team2 && console.log('team2 is more likely to win');
-//printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich')
 printGoals(...game.scored)
 console.log(players1, players2);
 console.log(gk, fieldPlayers);
 console.log(allPlayers);
 console.log(playersFinal);
-console.log(team1, draw, team2);
+console.log(team1, draw, team2); */
 
-/* console.log()
-console.log()
- */
+// Challenge #2
+
+game.scored.map(el => console.log(`Goal 1: ${el}`));
+
+function calcAvg(arr) {
+    const sum = arr.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+    return sum / arr.length;
+};
+
+const oddsArray = Object.values(game.odds);
+console.log(calcAvg(oddsArray));
+
+for (const [team, odd] of Object.entries(game.odds)) {
+    const teamstr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+    console.log(`Odd of ${teamstr} ${odd}`);
+}
