@@ -2,7 +2,7 @@
   background-color: rgb(43, 42, 42);
 }
 
-h1 {
+h1, h2 {
   height: 10vh;
   background-color: rgb(180, 180, 82);
   color:rgb(7, 80, 50);
@@ -13,3 +13,4 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
