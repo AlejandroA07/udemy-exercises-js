@@ -90,3 +90,70 @@ for (const [key, value] of question) {
 // convert Map to an array
 
 console.log(...question)
+
+// Strings
+const airLine = 'Tap Air Portugal';
+
+console.log(airLine.slice(0, airLine.indexOf(' ')));
+console.log(airLine.slice(airLine.lastIndexOf(' ') + 1));
+console.log(airLine.toLowerCase());
+console.log(airLine.toUpperCase());
+console.log(airLine.trim());
+console.log(airLine.toLowerCase().trim());
+
+function fixedEmail(email) {
+  email.toLowerCase().trim();
+}
+// Replace
+const priceGB = '288,97£';
+// First argument is what u want to replace and second what to be instead.
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement = 'All passengers come to boarding door 23. Boarding door 23!';
+
+// /door/ is called a regular expression and the g stand for global.
+console.log(announcement.replace(/door/g, 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+
+// Booleans
+const plane = 'A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.startsWith('A320'));
+console.log(plane.endsWith('neo'));
+
+console.log('Manuel Almeida'.split(' '));
+
+const [firstName, lastName] = 'Manuel Almeida'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+
+console.log(newName);
+
+
+function capitalizeName(name) {
+  const names = name.split(' ');
+  const upperName = [];
+  
+  for (const nam of names) {
+    upperName.push(nam.replace(nam[0], nam[0].toUpperCase()));
+    //upperName.push(nam[0].toUpperCase() + nam.slice(1));
+  }
+  console.log(upperName.join(' '));
+}
+
+capitalizeName('jessica ann smith davis');
+
+const message = 'Go to gate 23';
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+
+function maskCreditCard(number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+}
+
+
+
+console.log(maskCreditCard(5448769835468934))
+
